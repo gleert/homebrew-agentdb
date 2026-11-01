@@ -26,6 +26,9 @@ One command per tool. It registers `agentdb mcp proxy`, which uses your saved lo
 | OpenAI Codex (CLI and IDE extension) | `agentdb mcp install codex` | Tested (config read by Codex) |
 | Cursor | `agentdb mcp install cursor` | Experimental |
 | VS Code (Copilot agent mode) | `agentdb mcp install vscode` | Experimental |
+| Claude Desktop | `agentdb mcp install claude-desktop` | Experimental |
+| Windsurf | `agentdb mcp install windsurf` | Experimental |
+| Gemini CLI | `agentdb mcp install gemini` | Config verified (`gemini mcp list`: Connected); use a trusted folder |
 
 Then **start a new chat** in the tool and ask: *"Using agentdb, list my objects."*
 
@@ -35,29 +38,20 @@ Then **start a new chat** in the tool and ask: *"Using agentdb, list my objects.
 
 ### Other tools (manual, not yet tested)
 
-Any tool that can start a local (stdio) MCP server can use the same command. Find the full path first, because desktop apps don't always see Homebrew's PATH:
-
-```bash
-which agentdb
-```
-
-Then add a server named `agentdb` with that path as the command and `mcp proxy` as the arguments. In the common JSON format:
-
-```json
-{
-  "mcpServers": {
-    "agentdb": { "command": "/opt/homebrew/bin/agentdb", "args": ["mcp", "proxy"] }
-  }
-}
-```
-
-| Tool | Where to add it |
-|---|---|
-| Claude Desktop | Settings → Developer → Edit Config (`claude_desktop_config.json`), then restart the app |
-| Windsurf | `~/.codeium/windsurf/mcp_config.json` (same format) |
-| Gemini CLI | `~/.gemini/settings.json` (same `mcpServers` format) |
+Any tool that can start a local (stdio) MCP server can use `agentdb mcp proxy`. Run `which agentdb` for the full path and add a server named `agentdb` with that command and the arguments `mcp proxy`.
 
 **Web apps** (claude.ai, ChatGPT) can't start local programs, so they connect to `https://alpha.agentdb.link/mcp` directly. See the setup page shown after you create your workspace.
+
+## Workspaces
+
+```bash
+agentdb workspace list
+agentdb workspace create "My Application"
+agentdb workspace use my-application        # add --project to keep it per project (.agentdb.json)
+agentdb workspace current
+```
+
+Agents can do the same over MCP (`workspace_list`, `workspace_create`, `workspace_select`).
 
 ## Teach your agent
 
