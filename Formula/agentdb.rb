@@ -3,27 +3,27 @@
 class Agentdb < Formula
   desc "CLI and MCP connector for AgentDB, the persistent database for AI agents"
   homepage "https://agentdb.link"
-  version "1.0.0-beta.3"
+  version "1.0.0-rc.3"
 
   on_macos do
     on_arm do
-      url "https://alpha.agentdb.link/downloads/cli/1.0.0-beta.3/agentdb-1.0.0-beta.3-darwin-arm64.tar.gz"
-      sha256 "10c30447181f7f623392d99039b75052cfa5d56e0c42c99fbd700688d13bd97c"
+      url "https://alpha.agentdb.link/downloads/cli/1.0.0-rc.3/agentdb-1.0.0-rc.3-darwin-arm64.tar.gz"
+      sha256 "b544c3027c48947853dac65bca6287b14ed30c687b07d94758bcc133620765d0"
     end
     on_intel do
-      url "https://alpha.agentdb.link/downloads/cli/1.0.0-beta.3/agentdb-1.0.0-beta.3-darwin-x64.tar.gz"
-      sha256 "acd064d4d49f0b576b13cf5eb9fb46d82f613e2648a7ae38be09268505a1eeef"
+      url "https://alpha.agentdb.link/downloads/cli/1.0.0-rc.3/agentdb-1.0.0-rc.3-darwin-x64.tar.gz"
+      sha256 "cb6687882840f2280562ddc2450ac5166c9971e6f9378932d0ebe6a23b926d65"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://alpha.agentdb.link/downloads/cli/1.0.0-beta.3/agentdb-1.0.0-beta.3-linux-arm64.tar.gz"
-      sha256 "6e5544440e98979d174ad2dd033a8d339fa4a9ae06c57a6d5c66bed6e65c3811"
+      url "https://alpha.agentdb.link/downloads/cli/1.0.0-rc.3/agentdb-1.0.0-rc.3-linux-arm64.tar.gz"
+      sha256 "71008d228eed0b2c229aca036e940767480346410092f92ec05327f4790c7bcc"
     end
     on_intel do
-      url "https://alpha.agentdb.link/downloads/cli/1.0.0-beta.3/agentdb-1.0.0-beta.3-linux-x64.tar.gz"
-      sha256 "b8701f35f05b73f28f84a14991feb900609310a68bace6dcecfcb5bcf60930c3"
+      url "https://alpha.agentdb.link/downloads/cli/1.0.0-rc.3/agentdb-1.0.0-rc.3-linux-x64.tar.gz"
+      sha256 "56db471e60ee7c43c39dc770d198746a0203ee0cf4d3bdc7709311d27018038b"
     end
   end
 
